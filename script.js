@@ -5,6 +5,16 @@ const addBtn = document.getElementById("add");
 const clearBtn = document.getElementById("clear");
 const notesContainer = document.querySelector(".notes-container");
 const emptyMessage = document.getElementById("empty-message")
+const inputSection = document.querySelector(".input-part")
+const btns = document.querySelector('.btns')
+const heading = document.getElementsByTagName('h1')[0]
+
+window.addEventListener("load", () =>{
+    inputSection.classList.add('visible')
+    btns.classList.add('visible')
+    heading.classList.add('visible')
+    emptyMessage.classList.add('visible')
+})
 
 function addNote() {
   // console.log("notes added");
@@ -13,10 +23,10 @@ function addNote() {
   if(textInput.value.trim() === ""){
     alert("please add some notes");
     textInput.animate([
-        {transform: 'translateX(4px)'},
-        {transform: 'translateX(0)'},
-        {transform: 'translateX(4px)'},
-        {transform: 'translateX(0)'}
+        {transform: 'translateY(4px)'},
+        {transform: 'translateX(2px)'},
+        {transform: 'translateY(4px)'},
+        {transform: 'translateX(2px)'}
     ], {
         duration: 200,
         easing: 'ease-in-out',
@@ -35,6 +45,7 @@ function addNote() {
   stickyDiv.appendChild(crossBtn);
   stickyDiv.style.backgroundColor = bcgColor.value;
   stickyDiv.style.color = fontColor.value;
+  stickyDiv.classList.add('sticky-div')
   notesContainer.appendChild(stickyDiv);
   emptyMessage.style.display = "none"
   textInput.value = "";

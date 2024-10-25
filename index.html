@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Sticky Notes</title>
-  </head>
-  <body>
-    <div id="container">
-      <div id="left">
-        <div id="input-part">
-          <textarea
-            name="input"
-            id="textArea"
-            placeholder="// Write a note here"
-            rows="8"
-            cols="40"
-          ></textarea>
-          <input
-            type="color"
-            name="bcgColor"
-            id="bcg-Color"
-            title="Choose-Color"
-            value="#C9DF56"
-          />
-          <input
-            type="color"
-            name="fontColor"
-            id="font-Color"
-            title="Choose-Color"
-          />
-        </div>
-        <div>
-          <button id="add" class="btn" title="add note">ADD NOTE</button>
-          <button id="clear" class="btn" title="clear all"> CLEAR ALL</button>
-        </div>
-      </div>
+</head>
 
-      <div id="right">
-        <h1>YOUR NOTES</h1>
+<body>
+    <div class="left">
+        <div class="input-part">
+            <textarea name="input" id="textArea" placeholder="// Write your note here" rows="8" cols="40"></textarea>
+            <div class="color-input">
+                <div class="bg-color">
+                    <label for="bcg-Color">Background Color </label>
+                    <input type="color" name="bcgColor" id="bcg-Color" title="Choose-Color" value="#C9DF56" />
+                </div>
+
+                <div class="text-color">
+                    <label for="font-Color">Text Color</label>
+                    <input type="color" name="fontColor" id="font-Color" title="Choose-Color" />
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <button id="add" class="btn" title="add note">ADD NOTE</button>
+            <button id="clear" class="btn" title="clear all">CLEAR ALL</button>
+        </div>
+    </div>
+
+    <div class="right">
+        <h1>🖋️ YOUR NOTES 🖋️</h1>
         <p id="empty-message">📝 You have not added any note yet ! 📝</p>
 
         <div class="notes-container">
-          <!-- <div>
+            <!-- <div>
             <p>hello boss</p>
           </div> -->
         </div>
-      </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
